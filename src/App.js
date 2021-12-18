@@ -23,12 +23,7 @@ const themeChange = () =>{
     } 
     document.querySelector('.btns').style.backgroundColor="#25273c";
     document.querySelector('input').style.backgroundColor="#25273c";
-    var y= document.getElementsByClassName('cross');
-    var j;
-    for (j = 0; j < y.length; j++) {
-      y[j].style.fill="#cacde8";
-    
-    } 
+  
 
 
 }
@@ -48,12 +43,7 @@ else {
     document.querySelector('.btns').style.backgroundColor="white";
     document.querySelector('input').style.backgroundColor="white";
 
-    var y= document.getElementsByClassName('cross');
-    var j;
-    for (j = 0; j < y.length; j++) {
-      y[j].style.fill="black";
     
-    } 
 }
 
 }
