@@ -2,12 +2,17 @@
     padding: 0%;
     margin: 0%;
     color:black;
+    
+}
+body{
+    background-color: black;
 }
 .to_do{
     width:35%;
     margin: auto; 
     height: 100%;
     padding-top: 50px;
+    position: relative;
     
 }
 .Theme{
@@ -35,12 +40,12 @@
     height: 3rem;
     border: none;
     border-radius: 2px;
-    padding-left: 40px;
+    
 }
 .Theme .input_field input[type=text]{
     font-size: 18px;
     color: black;
-
+     
     font-weight: 500;
     
 }
@@ -49,4 +54,53 @@ input::placeholder{
 }
 input:focus{
     outline: none;
+}
+.results{
+    width: 35%;
+    background-color: white;
+    margin: auto;
+    position: absolute;
+    top: 200px;
+    left: 28rem;
+    z-index: 9999;
+    text-align: center;
+    font-weight: 400;
+
+}
+
+.results ul li{
+    border-bottom: 1px solid rgb(121, 115, 115);
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px 0 15px;
+    align-items: center;
+}
+li img{
+    width: 12px;
+    height: 12px;
+}
+.checkbox{
+    
+    height: 25px;
+    width: 25px;
+    background-color: none;
+    border-radius: 60%;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 0 15px 0 15px;
+    align-items: center;
+    height: 40px;
+}
+.btns .function{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.function div{
+    margin-left: 10px;
 }

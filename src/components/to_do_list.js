@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import setLigthImage from "../images/icon-sun.svg";
+import  cross from "../images/icon-cross.svg";
 import "../style/to_do_list.css";
 
 export default function Header() {
@@ -18,8 +19,7 @@ export default function Header() {
    const add=(e)=>{
      e.preventDefault();
      setDataItem([...data,{text: value,completed: false, id: new Date().getTime()}]);
-     
-      setValue("");
+     setValue(value);
      
     }
     useEffect(() => {
@@ -33,12 +33,35 @@ export default function Header() {
    localStorage.setItem("key",JSON.stringify(data));
     
   },[data]);
+
   const toggleId=(id)=>{
     const newid=data.map(data =>
       data.id === id ? { ...data, completed: !data.completed } : data
     );
     setDataItem(newid);
   } 
+
+  const clearComplete = () => {
+    const updatedTodos = data.filter((val)=>{
+      if(val.completed==false){
+      return val;
+    }});
+    setDataItem(updatedTodos)
+
+}
+
+const removeItem =(id) =>{
+  console.log(id);
+  const updatedTodo = data.filter((val)=>{
+    if(val.id!==id){
+    return val;
+  }});
+  
+  setDataItem(updatedTodo)
+
+}
+
+
  
     return (
       <div className='Theme'>
@@ -56,15 +79,18 @@ export default function Header() {
         <div className="results">
           <ul>{
             data.map((val,i)=>{
-              return (<li key={i}><input type="checkbox" checked={val.completed} onClick={()=>toggleId(val.id)}/>{val.text}</li>)
+              return (<li key={i}><input type="checkbox" className='checkbox' checked={val.completed} onClick={()=>toggleId(val.id)}/>{val.text}
+            <img src={cross} alt="" className='cross' onClick={()=>removeItem(val.id)}/>
+              </li>)
             })
           }  
           </ul>
-          <div className="bnts">
-            <button >All</button>
-            <button>Active</button>
-            <button >Completed</button>
-            <button>Clear Completed</button>
+          <div className="btns">
+            <div>setofItems</div>
+            <div className='function'><div >All</div>
+            <div>Active</div>
+            <div >Completed</div></div>
+            <div onClick={clearComplete}>Clear Completed</div>
           </div>
         </div>
       </div>
