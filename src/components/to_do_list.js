@@ -19,10 +19,13 @@ export default function Header() {
   //onSubmit
   const add = (e) => {
     e.preventDefault();
+    if(value!==""){
+      
     setDataItem([
       ...data,
       { text: value, completed: false, id: new Date().getTime() },
     ]);
+    }
     setValue(value);
   };
   // getting data from localstorge
