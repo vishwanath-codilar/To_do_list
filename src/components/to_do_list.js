@@ -10,7 +10,7 @@ export default function Header() {
   const [currentState, setTabState] = useState("");
 
   var itemsLeft = 0;
-  
+
   //targeting input field
   const setData = (event) => {
     setValue(event.target.value);
@@ -43,6 +43,7 @@ export default function Header() {
     const newid = data.map((data) =>
       data.id === id ? { ...data, completed: !data.completed } : data
     );
+    
     setDataItem(newid);
   };
 
