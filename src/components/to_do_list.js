@@ -168,7 +168,11 @@ export default function Header({themeChange}) {
             })}
           </ul>
 
-          <div className="btns">
+         
+        </div>
+      </div>
+      <div className="btn-wrp">
+      <div className="btns">
             <div>{leftItems()} items</div>
             <div className="function">
               <div onClick={activeTab} id={currentState === "All"}>
@@ -183,8 +187,7 @@ export default function Header({themeChange}) {
             </div>
             <div onClick={clearComplete}>Clear Completed</div>
           </div>
-        </div>
-      </div>
+          </div>
     </div>
   );
 }

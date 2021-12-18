@@ -62,8 +62,8 @@ input:focus{
     width: 100%;
     top: 200px;
     left: 0%;
-  
-    padding: 0 20px 0 20px;
+    border-radius: 6px;
+    padding: 0 20px 30px 20px;
     box-shadow: 0 35px 50px rgb(0 0 0 / 50%)
 
     
@@ -114,6 +114,10 @@ li img{
 input[type="checkbox"]:checked{
     text-decoration: line-through;
 }
+.btn-wrp{
+    padding: 0 20px 0 20px;
+    margin-top: 60px ;
+}
 .btns{
     display: flex;
     flex-direction: row;
@@ -121,7 +125,10 @@ input[type="checkbox"]:checked{
     font-size: 12px;
     padding: 0 15px 0 15px;
     align-items: center;
-    height: 40px;
+    height: 60px;
+    box-shadow: 0 35px 50px rgb(0 0 0 / 50%);
+    border-radius: 6px;
+
 }
 .btns .function{
     display: flex;
@@ -148,11 +155,19 @@ input[type="checkbox"]:checked{
         width: 37%;
         margin: auto;
         font-weight: 400;
-        border-radius: 5px;
-   
+        padding-bottom: 0px;
     
     }
-    
-
+    .btn-wrp{
+        padding: 0 20px 0 20px;
+        margin-top: 0px ;
+        width: 39%;
+        margin: auto;
+    }
+    .btns .function{
+        display: flex;
+        flex-direction: row;
+       
+    }
     
 }
