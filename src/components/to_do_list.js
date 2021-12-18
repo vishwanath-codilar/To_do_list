@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import setLigthImage from "../images/icon-moon.svg";
+
 import cross from "../images/icon-cross.svg";
 import "../style/to_do_list.css";
 
-export default function Header() {
+export default function Header({themeChange}) {
   const [data, setDataItem] = useState([]);
-  console.log(data);
+  // console.log(data);
   const [value, setValue] = useState();
   const [currentState, setTabState] = useState("");
 
@@ -19,10 +19,12 @@ export default function Header() {
   //onSubmit
   const add = (e) => {
     e.preventDefault();
+    if(value!==""){
     setDataItem([
       ...data,
       { text: value, completed: false, id: new Date().getTime() },
-    ]);
+    ])
+    }
     setValue(value);
   };
   // getting data from localstorge
@@ -59,7 +61,7 @@ export default function Header() {
  
   //deleting items from the localstorage
   const removeItem = (id) => {
-    console.log(id);
+    // console.log(id);
     const updatedTodo = data.filter((val) => {
       if (val.id !== id) {
         return val;
@@ -83,10 +85,11 @@ export default function Header() {
   return (
     <div className="Theme">
       <div className="to_do">
+      
         <div className="title">
           <span>todo</span>
           <span>
-            <img src={setLigthImage} alt="" />
+            <img src="images/icon-moon.svg" alt="" id="image" onClick={themeChange}/>
           </span>
         </div>
         <div className="input_field">
@@ -101,9 +104,9 @@ export default function Header() {
       </div>
       <div className="result_main">
         <div className="results">
-          <ul>
+          <ul className="list">
             {data.map((val, i) => {
-              if (currentState === "All") {
+              if (currentState === "All" || currentState==="") {
                 return (
                   <li key={i}>
                     <input
