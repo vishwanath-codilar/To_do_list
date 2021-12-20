@@ -123,12 +123,8 @@ export default function Header({themeChange}) {
                     />
                    
                     <span style={val.completed?{textDecoration:"line-through"}:null}>{val.text}</span>
-                    <img
-                      src={cross}
-                      alt=""
-                      className="cross"
-                      onClick={() => removeItem(val.id)}
-                    />
+                   <span className="cross"> 
+                    <svg className="svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" onClick={() => removeItem(val.id)}><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"   /></svg></span>
                   </li>
                 );
               } else if (currentState === "Active") {
@@ -142,12 +138,8 @@ export default function Header({themeChange}) {
                         onClick={() => toggleId(val.id)}
                       />
                      <span style={val.completed?{textDecoration:"line-through"}:null}>{val.text}</span>
-                      <img
-                        src={cross}
-                        alt=""
-                        className="cross"
-                        onClick={() => removeItem(val.id)}
-                      />
+                     <span className="cross"> 
+                    <svg className="svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" onClick={() => removeItem(val.id)}><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"   /></svg></span>
                     </li>
                   );
                 }
@@ -162,12 +154,8 @@ export default function Header({themeChange}) {
                         onClick={() => toggleId(val.id)}
                       />
                     <span style={val.completed?{textDecoration:"line-through"}:null}>{val.text}</span>
-                      <img
-                        src={cross}
-                        alt=""
-                        className="cross"
-                        onClick={() => removeItem(val.id)}
-                      />
+                    <span className="cross"> 
+                    <svg className="svg" xmlns="http://www.w3.org/2000/svg" width="18" height="18" onClick={() => removeItem(val.id)}><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"   /></svg></span>
                     </li>
                   );
                 }
