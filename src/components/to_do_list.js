@@ -19,13 +19,17 @@ export default function Header({themeChange}) {
   //onSubmit
   const add = (e) => {
     e.preventDefault();
-    if(value!==""){
+    if(!value || value.trim().length==0){
+      alert("plz enter somthing")
+    }
+    else{
     setDataItem([
       ...data,
       { text: value, completed: false, id: new Date().getTime() },
     ])
     }
-    setValue(value);
+
+    setValue('');
   };
   // getting data from localstorge
   useEffect(() => {
@@ -95,9 +99,10 @@ export default function Header({themeChange}) {
         </div>
         <div className="input_field">
           <form onSubmit={add}>
-            <input 
+            <input
               type="text"
               placeholder="Currently typing..."
+              value={value}
               onChange={setData}
             />
           </form>

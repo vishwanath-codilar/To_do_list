@@ -1,13 +1,14 @@
 *{
   padding: 0%;
   margin: 0%;
-  overflow-x: ;
+ 
   box-sizing: border-box;
   
 }
 body{
-  background-image: url(/home/vishwanath/Desktop/to-do-list-app/todo-list/src/images/bg-desktop-light.jpg);
-  background-repeat: no-repeat;
-  max-height: 30%;
-  color:  black;
+/*   
+  ocument.body.querySelector('.Theme').style.backgroundImage="url('/images/bg-desktop-dark.jpg')"
+  */
+ 
 }
+

@@ -12,16 +12,11 @@ const themeChange = () =>{
   if (img1.src.match("images/icon-moon.svg")  ) {
     img1.src = "images/icon-sun.svg";
     document.body.style.backgroundColor= '#25273c';
-    document.body.style.color='white';
+    document.body.style.color= 'white';
     document.body.querySelector('.results').style.boxShadow = "0 35px 50px rgb(0 0 0 / 50%)";
     document.body.querySelector('.results').style.backgroundColor="#25273c";
-    document.body.style.backgroundImage="url('/images/bg-desktop-dark.jpg')"
-    var x= document.getElementsByClassName('lists');
-    var i;
-    for (i = 0; i < x.length; i++) {
-      x[i].style.backgroundColor = "#25273c";
-      x[i].style.borderBottom = "1px solid #393a4c";
-    } 
+    document.body.querySelector('.Theme').style.backgroundImage="url('/images/bg-desktop-dark.jpg')"
+    
     document.querySelector('.btns').style.backgroundColor="#25273c";
     document.querySelector('input').style.backgroundColor="#25273c";
     
@@ -32,16 +27,11 @@ else {
     img1.src = "images/icon-moon.svg";
     document.body.style.color= 'black';
     document.body.style.backgroundColor='white';
-    document.body.style.backgroundImage="url('/images/bg-desktop-light.jpg')"
+    document.body.querySelector('.Theme').style.backgroundImage="url('/images/bg-desktop-light.jpg')"
     document.body.querySelector('.results').style.boxShadow = "0 35px 50px rgb(194 195 214 / 50%)";
     document.body.querySelector('.results').style.backgroundColor="white";
     
-    var x= document.getElementsByClassName('lists');
-    var i;
-    for (i = 0; i < x.length; i++) {
-      x[i].style.backgroundColor = "white";
-      x[i].style.borderBottom = "1px solid #e4e5f1";
-    } 
+    
     document.querySelector('.btns').style.backgroundColor="white";
     document.querySelector('input').style.backgroundColor="white";
 

@@ -4,15 +4,14 @@
     width:100%;
     margin: auto; 
     height: 100%;
-    padding-top: 50px;
-    
-    padding: 0 20px 0 20px;
+    padding: 50px 20px 0 20px;
     
 }
 .Theme{
-    margin-top: 19px;
-    font-weight: 700;
-    
+    background-image: url(/home/vishwanath/Desktop/to-do-list-app/todo-list/src/images/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+   
+   
 }
 .Theme .title{
     display: flex;
@@ -29,7 +28,7 @@
 }
 .Theme .input_field input{
     width: 100%;
-    height: 3rem;
+    height: 4rem;
     border: none;
     border-radius: 2px;
     padding-left: 20px;
@@ -54,7 +53,7 @@ input:focus{
 }
 .results{
     width: 100%;
-    border-radius: 6px;
+    
      padding-bottom: 40px;
     background-color: white;
     margin-top: 40px;
@@ -64,7 +63,7 @@ input:focus{
 
 .results ul li{
     border-bottom: 1px solid rgb(121, 115, 115);
-    height: 45px;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     padding: 0 15px 0 15px;
@@ -116,7 +115,7 @@ li img{
     align-items: center;
     height: 60px;
     box-shadow: 0 35px 50px rgb(0 0 0 / 50%);
-    border-radius: 6px;
+    
     background-color: white;
 }
 .btns .function{
