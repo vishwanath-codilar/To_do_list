@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import cross from "../images/icon-cross.svg";
-import check from "../images/icon-check.svg";
 import "../style/to_do_list.css";
 
 export default function Header({themeChange}) {
@@ -15,6 +13,7 @@ export default function Header({themeChange}) {
   const setData = (event) => {
     setValue(event.target.value);
   };
+
 
   //onSubmit
   const add = (e) => {
@@ -31,6 +30,8 @@ export default function Header({themeChange}) {
 
     setValue('');
   };
+
+
   // getting data from localstorge
   useEffect(() => {
     const todos = JSON.parse(localStorage.getItem("key"));
@@ -39,10 +40,13 @@ export default function Header({themeChange}) {
     }
   }, []);
 
+
   //storing data to localstorage
   useEffect(() => {
     localStorage.setItem("key", JSON.stringify(data));
   }, [data]);
+
+
 
   // for toggling completed value 
   const toggleId = (id) => {
@@ -52,6 +56,7 @@ export default function Header({themeChange}) {
    
     setDataItem(newid);
   };
+
 
   // deleting a completed items
   const clearComplete = () => {
@@ -63,6 +68,7 @@ export default function Header({themeChange}) {
     setDataItem(updatedTodos);
   };
  
+
   //deleting items from the localstorage
   const removeItem = (id) => {
     // console.log(id);
@@ -74,11 +80,13 @@ export default function Header({themeChange}) {
    setDataItem(updatedTodo);
   };
 
+
   // to change the state
   const activeTab = (e) => {
     setTabState(e.target.textContent);
   };
 
+  
   //number of left items
   const leftItems = () => {
     const updatedTodos = data.filter((data) => !data.completed);
