@@ -14,7 +14,8 @@ const themeChange = () =>{
     document.body.style.backgroundColor= '#25273c';
     document.body.style.color='white';
     document.body.querySelector('.results').style.boxShadow = "0 35px 50px rgb(0 0 0 / 50%)";
-    document.body.querySelector('.Theme').style.backgroundImage="url('/images/bg-desktop-light.jpg')"
+    document.body.querySelector('.results').style.backgroundColor="#25273c";
+    document.body.style.backgroundImage="url('/images/bg-desktop-dark.jpg')"
     var x= document.getElementsByClassName('lists');
     var i;
     for (i = 0; i < x.length; i++) {
@@ -23,7 +24,7 @@ const themeChange = () =>{
     } 
     document.querySelector('.btns').style.backgroundColor="#25273c";
     document.querySelector('input').style.backgroundColor="#25273c";
-  
+    
 
 
 }
@@ -31,8 +32,9 @@ else {
     img1.src = "images/icon-moon.svg";
     document.body.style.color= 'black';
     document.body.style.backgroundColor='white';
-    document.body.querySelector('.Theme').style.backgroundImage="url('/images/bg-desktop-dark.jpg')"
+    document.body.style.backgroundImage="url('/images/bg-desktop-light.jpg')"
     document.body.querySelector('.results').style.boxShadow = "0 35px 50px rgb(194 195 214 / 50%)";
+    document.body.querySelector('.results').style.backgroundColor="white";
     
     var x= document.getElementsByClassName('lists');
     var i;
@@ -48,10 +50,12 @@ else {
 
 }
   return (
+    <>
     <div className="App" >
      
       <Header themeChange={themeChange}/>
     </div>
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import cross from "../images/icon-cross.svg";
+import check from "../images/icon-check.svg";
 import "../style/to_do_list.css";
 
 export default function Header({themeChange}) {
@@ -8,8 +9,7 @@ export default function Header({themeChange}) {
   // console.log(data);
   const [value, setValue] = useState();
   const [currentState, setTabState] = useState("");
-
-  var itemsLeft = 0;
+ 
 
   //targeting input field
   const setData = (event) => {
@@ -45,7 +45,7 @@ export default function Header({themeChange}) {
     const newid = data.map((data) =>
       data.id === id ? { ...data, completed: !data.completed } : data
     );
-    
+   
     setDataItem(newid);
   };
 
@@ -78,11 +78,12 @@ export default function Header({themeChange}) {
   //number of left items
   const leftItems = () => {
     const updatedTodos = data.filter((data) => !data.completed);
-    itemsLeft = updatedTodos.length;
+  
     return updatedTodos.length;
   };
 
   return (
+    <>
     <div className="Theme">
       <div className="to_do">
       
@@ -94,7 +95,7 @@ export default function Header({themeChange}) {
         </div>
         <div className="input_field">
           <form onSubmit={add}>
-            <input
+            <input 
               type="text"
               placeholder="Currently typing..."
               onChange={setData}
@@ -115,7 +116,8 @@ export default function Header({themeChange}) {
                       checked={val.completed}
                       onClick={() => toggleId(val.id)}
                     />
-                    {val.text}
+                   
+                    <span style={val.completed?{textDecoration:"line-through"}:null}>{val.text}</span>
                     <img
                       src={cross}
                       alt=""
@@ -134,7 +136,7 @@ export default function Header({themeChange}) {
                         checked={val.completed}
                         onClick={() => toggleId(val.id)}
                       />
-                      {val.text}
+                     <span style={val.completed?{textDecoration:"line-through"}:null}>{val.text}</span>
                       <img
                         src={cross}
                         alt=""
@@ -154,7 +156,7 @@ export default function Header({themeChange}) {
                         checked={val.completed}
                         onClick={() => toggleId(val.id)}
                       />
-                      {val.text}
+                    <span style={val.completed?{textDecoration:"line-through"}:null}>{val.text}</span>
                       <img
                         src={cross}
                         alt=""
@@ -189,5 +191,6 @@ export default function Header({themeChange}) {
           </div>
           </div>
     </div>
+    </>
   );
 }
